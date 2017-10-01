@@ -1,0 +1,54 @@
+{
+  "name": "lab-cli",
+  "library": "styled-components",
+  "components": [
+    {
+      "name": "Button",
+      "type": "button",
+      "props": {
+        "fontSize": 1,
+        "px": 4,
+        "py": 2,
+        "color": "white",
+        "bg": "blue"
+      },
+      "style": {
+        "display": "inline-block",
+        "fontFamily": "inherit",
+        "borderWidth": 0,
+        "borderRadius": "4px",
+        "appearance": "none"
+      },
+      "examples": [
+        "<Button>Hello</Button>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Heading",
+      "type": "h2",
+      "props": {
+        "fontSize": 5,
+        "m": 0,
+        "color": "blue"
+      },
+      "style": {
+        "fontWeight": "bold",
+        "lineHeight": 1.25
+      },
+      "examples": [
+        "<Heading>Hello</Heading>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Box",
+      "type": "div",
+      "props": {},
+      "style": {},
+      "examples": [
+        "<Box>Hello</Box>"
+      ]
+    }
+  ]
+}

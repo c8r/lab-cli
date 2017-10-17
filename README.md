@@ -1,5 +1,5 @@
 
-# Lab CLI
+# lab-util
 
 Command line utilities for Compositor Lab
 

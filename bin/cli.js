@@ -2,7 +2,7 @@
 const fs = require('fs')
 const path = require('path')
 const meow = require('meow')
-const dxs = require('dxs/modules')
+const createModules = require('../lib')
 const writeFile = require('write-file-atomic')
 const chokidar = require('chokidar')
 const findUp = require('find-up')
@@ -84,28 +84,28 @@ const parseConfig = (config, options) => {
   const changes = config.components
     .filter(filterChanges)
     .map(c => c.name)
-  const modules = dxs(config, Object.assign({}, config, options))
+  const modules = createModules(config, Object.assign({}, config, options))
   modules
-    .filter(m => changes.includes(m.name))
-    .filter(m => !options.pkg && !/^(index|lab|theme)$/.test(m.name))
+    .filter(m => /^(index|lab|theme)$/.test(m.name) || changes.includes(m.name))
+    .filter(m => !options.pkg ? !/^(index|lab|theme)$/.test(m.name) : true)
     .forEach(mod => {
-      // todo: handle .json files
-      // todo: copy theme.json and lab.json to output dir
       const filename = path.join(cli.flags.outDir, mod.name + '.js')
       write(filename, mod.module)
       spinner.succeed(filename + ' written')
     })
-  if (options.pkg) {
-  }
+
+  // copy theme.json and lab.json to output dir
+  if (options.pkg) copyJSON()
   cache = config.components
 }
 
 const copyJSON = () => {
-  const labPath = path.join(cli.flags.outDir, 'lab.json')
-  const themePath = path.join(cli.flags.outDir, 'theme.json')
-  write(labPath, JSON.stringify(config))
-  // todo
-  // write(themePath, JSON.stringify(theme))
+  const themeFile = findUp.sync('theme.json')
+  const theme = themeFile ? require(themeFile) : null
+  const labOutPath = path.join(cli.flags.outDir, 'lab.json')
+  const themeOutPath = path.join(cli.flags.outDir, 'theme.json')
+  write(labOutPath, JSON.stringify(config))
+  write(themeOutPath, JSON.stringify(theme))
 }
 
 if (!fs.existsSync(cli.flags.outDir)) {

@@ -7,7 +7,7 @@
     "lab": "bin/cli.js"
   },
   "scripts": {
-    "test": "./bin/cli.js lab.json -d src",
+    "test": "./bin/cli.js lab.json -d dist",
     "start": "./bin/cli.js -d src -w"
   },
   "keywords": [],

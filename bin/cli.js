@@ -20,6 +20,7 @@ const cli = meow(`
   Options
     -d --out-dir    Output directory
     -w --watch      Watch for changes
+    --pkg           Include index.js, lab.json, and theme.json in output
 `, {
   alias: {
     d: 'outDir',
@@ -30,7 +31,7 @@ const cli = meow(`
 const [ file ] = cli.input
 
 const badge = chalk.black.bgCyan(' L A B ')
-console.log(badge)
+console.log(badge, chalk.cyan('@compositor/lab'))
 
 const spinner = ora().start()
 const filepath = file
@@ -79,26 +80,39 @@ const filterChanges = component => {
   return a !== b
 }
 
-const parseConfig = (config) => {
+const parseConfig = (config, options) => {
   const changes = config.components
     .filter(filterChanges)
     .map(c => c.name)
-  const modules = dxs(config.components, config)
+  const modules = dxs(config, Object.assign({}, config, options))
   modules
     .filter(m => changes.includes(m.name))
+    .filter(m => !options.pkg && !/^(index|lab|theme)$/.test(m.name))
     .forEach(mod => {
+      // todo: handle .json files
+      // todo: copy theme.json and lab.json to output dir
       const filename = path.join(cli.flags.outDir, mod.name + '.js')
       write(filename, mod.module)
       spinner.succeed(filename + ' written')
     })
+  if (options.pkg) {
+  }
   cache = config.components
+}
+
+const copyJSON = () => {
+  const labPath = path.join(cli.flags.outDir, 'lab.json')
+  const themePath = path.join(cli.flags.outDir, 'theme.json')
+  write(labPath, JSON.stringify(config))
+  // todo
+  // write(themePath, JSON.stringify(theme))
 }
 
 if (!fs.existsSync(cli.flags.outDir)) {
   fs.mkdirSync(cli.flags.outDir)
 }
 
-parseConfig(config)
+parseConfig(config, cli.flags)
 
 if (cli.flags.watch) {
   const watcher = chokidar.watch(filepath)

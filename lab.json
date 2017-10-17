@@ -49,6 +49,14 @@
       "examples": [
         "<Box>Hello</Box>"
       ]
+    },
+    {
+      "name": "Header",
+      "imports": [
+        "Box",
+        "Heading"
+      ],
+      "jsx": "<Box p={3}><Heading>{props.heading}</Heading></Box>"
     }
   ]
 }

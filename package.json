@@ -1,27 +1,38 @@
 {
   "name": "@compositor/lab",
-  "version": "1.0.0-30",
+  "version": "1.0.0-31",
   "description": "CLI utilities for Compositor Lab",
-  "main": "index.js",
+  "main": "lib/index.js",
   "bin": {
     "lab": "bin/cli.js"
   },
   "scripts": {
-    "test": "./bin/cli.js lab.json -d src",
+    "test": "nyc ava",
+    "cover": "nyc report --reporter=html --reporter=lcov",
+    "build": "./bin/cli.js lab.json --pkg -d dist",
     "start": "./bin/cli.js -d src -w"
   },
   "keywords": [],
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.1.0",
     "chokidar": "^1.7.0",
-    "dxs": "^2.3.0",
     "find-up": "^2.1.0",
     "meow": "^3.7.0",
     "ora": "^1.3.0",
+    "prettier": "^1.7.4",
     "react": "^16.0.0",
+    "stringify-object": "^3.2.1",
     "update-notifier": "^2.2.0",
     "write-file-atomic": "^2.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "nyc": "^11.2.1"
   }
 }

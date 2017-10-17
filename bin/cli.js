@@ -2,7 +2,7 @@
 const fs = require('fs')
 const path = require('path')
 const meow = require('meow')
-const dxs = require('dxs/modules')
+const createModules = require('../lib')
 const writeFile = require('write-file-atomic')
 const chokidar = require('chokidar')
 const findUp = require('find-up')
@@ -20,6 +20,7 @@ const cli = meow(`
   Options
     -d --out-dir    Output directory
     -w --watch      Watch for changes
+    --pkg           Include index.js, lab.json, and theme.json in output
 `, {
   alias: {
     d: 'outDir',
@@ -30,7 +31,7 @@ const cli = meow(`
 const [ file ] = cli.input
 
 const badge = chalk.black.bgCyan(' L A B ')
-console.log(badge)
+console.log(badge, chalk.cyan('@compositor/lab'))
 
 const spinner = ora().start()
 const filepath = file
@@ -79,11 +80,18 @@ const filterChanges = component => {
   return a !== b
 }
 
-const parseConfig = (config) => {
+const parseConfig = (config, options) => {
   const changes = config.components
     .filter(filterChanges)
     .map(c => c.name)
-  const modules = dxs(config.components, config)
+
+  if (options.pkg) {
+    changes.push('index')
+    changes.push('lab')
+    changes.push('theme')
+  }
+
+  const modules = createModules(config, Object.assign({}, config, options))
   modules
     .filter(m => changes.includes(m.name))
     .forEach(mod => {
@@ -91,14 +99,26 @@ const parseConfig = (config) => {
       write(filename, mod.module)
       spinner.succeed(filename + ' written')
     })
+
+  // copy theme.json and lab.json to output dir
+  if (options.pkg) copyJSON()
   cache = config.components
+}
+
+const copyJSON = () => {
+  const themeFile = findUp.sync('theme.json')
+  const theme = themeFile ? require(themeFile) : null
+  const labOutPath = path.join(cli.flags.outDir, 'lab.json')
+  const themeOutPath = path.join(cli.flags.outDir, 'theme.json')
+  write(labOutPath, JSON.stringify(config))
+  write(themeOutPath, JSON.stringify(theme))
 }
 
 if (!fs.existsSync(cli.flags.outDir)) {
   fs.mkdirSync(cli.flags.outDir)
 }
 
-parseConfig(config)
+parseConfig(config, cli.flags)
 
 if (cli.flags.watch) {
   const watcher = chokidar.watch(filepath)

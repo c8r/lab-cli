@@ -84,10 +84,16 @@ const parseConfig = (config, options) => {
   const changes = config.components
     .filter(filterChanges)
     .map(c => c.name)
+
+  if (options.pkg) {
+    changes.push('index')
+    changes.push('lab')
+    changes.push('theme')
+  }
+
   const modules = createModules(config, Object.assign({}, config, options))
   modules
-    .filter(m => /^(index|lab|theme)$/.test(m.name) || changes.includes(m.name))
-    .filter(m => !options.pkg ? !/^(index|lab|theme)$/.test(m.name) : true)
+    .filter(m => changes.includes(m.name))
     .forEach(mod => {
       const filename = path.join(cli.flags.outDir, mod.name + '.js')
       write(filename, mod.module)

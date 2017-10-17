@@ -71,7 +71,7 @@ test('returns an array of objects', t => {
   t.snapshot(f)
 })
 
-test('accepts an options argument', t => {
+test('accepts a library option', t => {
   const mods = createModules(config, {
     library: 'glamorous'
   })
@@ -80,4 +80,13 @@ test('accepts an options argument', t => {
   t.is(typeof b, 'object')
   t.snapshot(a)
   t.snapshot(b)
+})
+
+test('accepts a custom template option', t => {
+  const template = () => `module.exports = 'hello'`
+  const [ a, b ] = createModules(config, {
+    harmony: true,
+    template
+  })
+  t.is(b.module.trim(), `module.exports = 'hello'`)
 })

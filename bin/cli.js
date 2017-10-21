@@ -128,7 +128,7 @@ if (cli.flags.watch) {
     spinner.start('updating...')
     delete require.cache[require.resolve(file)]
     const next = require(file)
-    parseConfig(next)
+    parseConfig(next, cli.flags)
     spinner.succeed('updated')
   })
 } else {

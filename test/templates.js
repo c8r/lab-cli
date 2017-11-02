@@ -131,6 +131,7 @@ test('composite has defaults', t => {
 test('css generates utils based on theme', t => {
   const theme = {
     space: [4, 8, 16, 32],
+    fontSizes: [12, 16, 24, 32, 64],
     color: {
       red: 'tomato',
       blue: 'bluegreen'

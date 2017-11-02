@@ -26,6 +26,7 @@ const config = [
     type: 'Box',
     props: {
       p: 3,
+      m: 4,
       bg: 'tomato'
     },
     style: {}

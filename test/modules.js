@@ -90,3 +90,11 @@ test('accepts a custom template option', t => {
   })
   t.is(b.module.trim(), `module.exports = 'hello'`)
 })
+
+test('accepts atomic template option', t => {
+  const out = createModules(config, {
+    library: 'atomic',
+    theme: {}
+  })
+  t.snapshot(out)
+})

@@ -127,19 +127,3 @@ test('composite has defaults', t => {
   const a = templates.composite({ name: 'Hello' })
   t.snapshot(a)
 })
-
-test('css generates utils based on theme', t => {
-  const theme = {
-    space: [4, 8, 16, 32],
-    fontSizes: [12, 16, 24, 32, 64],
-    fonts: ['sans-serif', 'monospace'],
-    color: {
-      red: 'tomato',
-      blue: 'bluegreen'
-    }
-  }
-
-  const result = templates.css({ theme })
-
-  t.snapshot(result)
-})

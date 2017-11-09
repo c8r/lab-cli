@@ -7,7 +7,7 @@ const config = [
     type: 'div',
     props: {
       bg: 'tomato',
-      ml: 2
+      ml: [2, 3, 4]
     },
     style: {
       'text-transform': 'uppercase',

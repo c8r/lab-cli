@@ -26,6 +26,7 @@ const config = [
     type: 'Box',
     props: {
       p: 3,
+      m: 4,
       bg: 'tomato'
     },
     style: {}
@@ -89,4 +90,12 @@ test('accepts a custom template option', t => {
     template
   })
   t.is(b.module.trim(), `module.exports = 'hello'`)
+})
+
+test('accepts atomic template option', t => {
+  const out = createModules(config, {
+    library: 'atomic',
+    theme: {}
+  })
+  t.snapshot(out)
 })

@@ -86,6 +86,10 @@ These templates can be found in [`lib/templates/`](https://github.com/c8r/lab-cl
 Using an AST for output with tools like Babel is also possible,
 but templates were used in an attempt to make it easier to contribute to this project.
 
+## lab.json Data Structure
+
+See [`docs/lab-json.md`](docs/lab-json.md)
+
 ## Roadmap
 
 - Vue.js export

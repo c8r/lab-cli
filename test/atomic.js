@@ -11,7 +11,7 @@ const config = [
     },
     style: {
       'text-transform': 'uppercase',
-      'text-align': '${props.center ? "center" : "left"}'
+      'text-align': 'right'
     },
     examples: [
       '<Box>A</Box>',

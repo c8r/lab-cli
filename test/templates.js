@@ -6,10 +6,10 @@ const config = {
   type: 'h2',
   extensionImport: '',
   systemFunctions: '',
-  props: `{
+  propsString: `{
   p: 2
 }`,
-  style: `(props, theme) => ({
+  styleString: `(props, theme) => ({
   fontFamily: 'inherit',
   color: props.theme('colors.blue')
 })`
@@ -18,8 +18,8 @@ const config = {
 const compConfig = {
   name: 'Box',
   type: 'Div',
-  props: '{}',
-  style: '{}',
+  propsString: '{}',
+  styleString: '{}',
   extensionImport: `import Div from './Div'`,
   systemFunctions: ''
 }
@@ -76,8 +76,8 @@ test('fela handles styled-system functions', t => {
     extensionImport: '',
     systemFunctions: 'textAlign,',
     system: ['textAlign'],
-    props: '{}',
-    style: '{}'
+    propsString: '{}',
+    styleString: '{}'
   })
   t.is(typeof a, 'string')
   t.snapshot(a)

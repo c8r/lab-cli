@@ -96,7 +96,8 @@ See [`docs/lab-json.md`](docs/lab-json.md)
 - Atomic CSS export
 - Support for using third party CSS libraries
 
-[MIT License](LICENSE.md)
 [Made by Compositor](https://compositor.io)
+|
+[MIT License](LICENSE.md)
 
 [lab]: https://compositor.io/lab/

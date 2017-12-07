@@ -21,7 +21,7 @@ Watch for changes:
 lab --out-dir dist/ --watch
 ```
 
-## Lab Packages
+### Lab Packages
 
 Lab projects can be published in a way that allows them to be installed and imported into other Lab projects from the app.
 
@@ -75,6 +75,9 @@ A string key to choose an output mode, one of the following:
 - `fela`
 - `cxs`
 
+#### `harmony`
+
+Boolean to export the template without transpiling to ES5 syntax.
 
 ## Templates
 

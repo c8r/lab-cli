@@ -12,7 +12,13 @@
     "build": "./bin/cli.js lab.json --pkg -d dist",
     "start": "./bin/cli.js -d src -w"
   },
-  "keywords": [],
+  "keywords": [
+    "compositor",
+    "lab",
+    "components",
+    "design",
+    "system"
+  ],
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {

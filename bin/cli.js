@@ -20,11 +20,13 @@ const cli = meow(`
   Options
     -d --out-dir    Output directory
     -w --watch      Watch for changes
+    -l --library    Override library defined in lab.json
     --pkg           Include index.js, lab.json, and theme.json in output
 `, {
   alias: {
     d: 'outDir',
-    w: 'watch'
+    w: 'watch',
+    l: 'library'
   }
 })
 

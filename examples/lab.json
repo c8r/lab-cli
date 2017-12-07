@@ -1,7 +1,6 @@
 {
   "name": "lab-cli",
-  "library": "vue",
-  "harmony": true,
+  "library": "styled-components",
   "components": [
     {
       "name": "Button",

@@ -15,8 +15,17 @@ const config = {
 }`
 }
 
-test('vue returns a string', t => {
-  const result = vue(config)
+const extConfig = {
+  name: 'Box',
+  type: 'Div',
+  props: '{}',
+  style: '{}',
+  extensionImport: `import Div from './Div'`,
+  systemFunctions: ''
+}
+
+test('vue returns a code string for extended components', t => {
+  const result = vue(extConfig)
 
   t.is(typeof result, 'string')
   t.snapshot(result)

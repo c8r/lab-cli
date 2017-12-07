@@ -9,8 +9,7 @@
   "scripts": {
     "test": "nyc ava",
     "cover": "nyc report --reporter=html --reporter=lcov",
-    "build": "./bin/cli.js lab.json --pkg -d dist",
-    "start": "./bin/cli.js -d src -w"
+    "build": "./bin/cli.js examples/lab.json --pkg -d examples/dist"
   },
   "keywords": [],
   "author": "Brent Jackson",

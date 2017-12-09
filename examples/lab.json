@@ -1,6 +1,7 @@
 {
   "name": "lab-cli",
   "library": "styled-components",
+  "harmony": true,
   "components": [
     {
       "name": "Button",

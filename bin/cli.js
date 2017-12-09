@@ -82,8 +82,6 @@ const filterChanges = component => {
   return a !== b
 }
 
-const determineExtension = library => library === 'vue' ? '.vue' : '.js'
-
 const parseConfig = (config, options) => {
   const changes = config.components
     .filter(filterChanges)
@@ -100,7 +98,7 @@ const parseConfig = (config, options) => {
     .filter(m => changes.includes(m.name))
     .forEach(mod => {
 
-      const filename = path.join(cli.flags.outDir, mod.name + determineExtension(config.library))
+      const filename = path.join(cli.flags.outDir, mod.name + '+.js')
       write(filename, mod.module)
       spinner.succeed(filename + ' written')
     })

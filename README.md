@@ -3,6 +3,11 @@
 
 Command line utilities and exporting module for [Compositor Lab][lab]
 
+[![Build Status][build-badge]][build]
+
+[build-badge]: https://img.shields.io/travis/c8r/lab-cli/master.svg?style=flat-square
+[build]: https://travis-ci.org/c8r/lab-cli
+
 ```sh
 npm install @compositor/lab
 ```

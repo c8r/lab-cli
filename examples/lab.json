@@ -57,7 +57,10 @@
         "Box",
         "Heading"
       ],
-      "jsx": "<Box p={3}><Heading>{props.heading}</Heading></Box>"
+      "jsx": "<Box p={3}><Heading>{props.heading}</Heading></Box>",
+      "examples": [
+        "<Header heading='foo' />"
+      ]
     }
   ]
 }

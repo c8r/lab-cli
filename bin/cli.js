@@ -97,7 +97,7 @@ const parseConfig = (config, options) => {
   modules
     .filter(m => changes.includes(m.name))
     .forEach(mod => {
-      const filename = path.join(cli.flags.outDir, mod.name + '+.js')
+      const filename = path.join(cli.flags.outDir, mod.name + '.js')
       write(filename, mod.module)
       spinner.succeed(filename + ' written')
     })

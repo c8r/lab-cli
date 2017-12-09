@@ -69,11 +69,11 @@ modules.forEach(mod => {
 
 A string key to choose an output mode, one of the following:
 
-- `styled-components`
-- `glamorous`
-- `emotion`
-- `fela`
-- `cxs`
+- [`styled-components`][sc]
+- [`glamorous`][glamorous]
+- [`emotion`][emotion]
+- [`fela`][fela]
+- [`cxs`][cxs]
 
 #### `harmony`
 
@@ -101,3 +101,8 @@ See [`docs/lab-json.md`](docs/lab-json.md)
 [MIT License](LICENSE.md)
 
 [lab]: https://compositor.io/lab/
+[sc]: https://styled-components.com
+[glamorous]: https://github.com/paypal/glamorous
+[emotion]: https://github.com/emotion-js/emotion
+[fela]: http://fela.js.org
+[cxs]: https://github.com/jxnblk/cxs

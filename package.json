@@ -30,7 +30,6 @@
     "chokidar": "^1.7.0",
     "find-up": "^2.1.0",
     "indent": "0.0.2",
-    "is-void-element": "^1.0.0",
     "lodash.flatten": "^4.4.0",
     "lodash.uniq": "^4.5.0",
     "meow": "^3.7.0",

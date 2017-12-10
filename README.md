@@ -79,6 +79,7 @@ A string key to choose an output mode, one of the following:
 - [`emotion`][emotion]
 - [`fela`][fela]
 - [`cxs`][cxs]
+- [`vue`][vue] (alpha)
 
 #### `harmony`
 
@@ -97,7 +98,7 @@ See [`docs/lab-json.md`](docs/lab-json.md)
 
 ## Roadmap
 
-- Vue.js export
+- Vue.js export (currently in alpha)
 - Atomic CSS export
 - Support for using third party CSS libraries
 
@@ -111,3 +112,4 @@ See [`docs/lab-json.md`](docs/lab-json.md)
 [emotion]: https://github.com/emotion-js/emotion
 [fela]: http://fela.js.org
 [cxs]: https://github.com/jxnblk/cxs
+[vue]: https://vuejs.org

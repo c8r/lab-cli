@@ -110,13 +110,13 @@ const macro = {
 }
 
 test('composite returns a string', t => {
-  const a = templates.composite(macro)
+  const a = templates.compositeReact(macro)
   t.is(typeof a, 'string')
   t.snapshot(a)
 })
 
 test('composite imports required components', t => {
-  const a = templates.composite(macro)
+  const a = templates.compositeReact(macro)
   t.is(typeof a, 'string')
   t.regex(a, /import\sBox\sfrom/)
   t.regex(a, /import\sText\sfrom/)
@@ -124,6 +124,6 @@ test('composite imports required components', t => {
 })
 
 test('composite has defaults', t => {
-  const a = templates.composite({ name: 'Hello' })
+  const a = templates.compositeReact({ name: 'Hello' })
   t.snapshot(a)
 })

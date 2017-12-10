@@ -136,4 +136,3 @@ if (cli.flags.watch) {
 } else {
   spinner.succeed('done')
 }
-

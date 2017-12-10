@@ -1,6 +1,7 @@
 {
   "name": "lab-cli",
   "library": "styled-components",
+  "harmony": true,
   "components": [
     {
       "name": "Button",
@@ -56,7 +57,10 @@
         "Box",
         "Heading"
       ],
-      "jsx": "<Box p={3}><Heading>{props.heading}</Heading></Box>"
+      "jsx": "<Box p={3}><Heading>{props.heading}</Heading></Box>",
+      "examples": [
+        "<Header heading='foo' />"
+      ]
     }
   ]
 }

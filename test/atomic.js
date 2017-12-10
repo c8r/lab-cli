@@ -21,11 +21,12 @@ const extConfig = {
   name: 'Box',
   type: 'Div',
   props: {
+    flex: true,
     children: 'Hello, world'
   },
   style: {},
   extensionImport: `import Div from './Div'`,
-  systemFunctions: ''
+  system: ['flex']
 }
 
 test('atomic returns a code string with the correct classes', t => {

@@ -9,20 +9,22 @@ const config = {
   type: 'h2',
   systemFunctions: '',
   extensionImport: '',
-  props: `{
-  p: 2,
-  color: 'black'
-}`,
-  style: `{
-  textDecoration: 'underline'
-}`
+  props: {
+    p: 2,
+    color: 'black'
+  },
+  style: {
+    textDecoration: 'underline'
+  }
 }
 
 const extConfig = {
   name: 'Box',
   type: 'Div',
-  props: '{}',
-  style: '{}',
+  props: {
+    p: 3
+  },
+  style: {},
   extensionImport: `import Div from './Div'`,
   systemFunctions: ''
 }

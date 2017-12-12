@@ -1,6 +1,6 @@
 {
   "name": "@compositor/lab",
-  "version": "1.0.0-36",
+  "version": "1.0.0-37",
   "description": "CLI utilities for Compositor Lab",
   "main": "lib/index.js",
   "bin": {

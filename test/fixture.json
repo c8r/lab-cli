@@ -1,0 +1,418 @@
+{
+  "name": "mono",
+  "library": "glamorous",
+  "components": [
+    {
+      "name": "Avatar",
+      "type": "img",
+      "props": {
+        "src": "https://pbs.twimg.com/profile_images/854537128994275328/nVZX1MEh_400x400.jpg",
+        "size": "64px",
+        "borderWidth": 2,
+        "borderRadius": 9999,
+        "px": 1,
+        "py": 1,
+        "borderColor": "gray1",
+        "bg": "transparent",
+        "color": "transparent"
+      },
+      "style": {
+        "height": "${props.size? props.size: '48px'}",
+        "width": "${props.size? props.size: '48px'}"
+      },
+      "examples": [
+        "<Avatar src='https://s3-us-west-1.amazonaws.com/c8r-demo/jxnblk.jpg' mr={2} />",
+        "<Avatar src='https://s3-us-west-1.amazonaws.com/c8r-demo/4lpine.jpg' mr={2} />",
+        "<Avatar src='https://s3-us-west-1.amazonaws.com/c8r-demo/mrmrs.jpg' mr={2} />",
+        "<Avatar src='https://s3-us-west-1.amazonaws.com/c8r-demo/dorman.jpg' mr={2} />",
+        "<Avatar src='https://s3-us-west-1.amazonaws.com/c8r-demo/hk.jpg' mr={2} />",
+        "<Avatar src='https://s3-us-west-1.amazonaws.com/c8r-demo/timothy.jpg' mr={2} />",
+        "<Avatar src='https://s3-us-west-1.amazonaws.com/c8r-demo/iheanyi.jpg' mr={2} />",
+        "<Avatar src='https://s3-us-west-1.amazonaws.com/c8r-demo/jules.jpg' mr={2} />",
+        "<Avatar src='https://s3-us-west-1.amazonaws.com/c8r-demo/dean.jpg' mr={2} />",
+        "<Avatar src='https://s3-us-west-1.amazonaws.com/c8r-demo/broccolini.jpg' mr={2} />"
+      ],
+      "system": [
+        "borderWidth",
+        "borderRadius",
+        "borderColor"
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "props": {
+        "fontSize": 1,
+        "px": 4,
+        "py": 2,
+        "mr": 2,
+        "color": "white",
+        "bg": "blue"
+      },
+      "style": {
+        "display": "inline-block",
+        "fontFamily": "inherit",
+        "borderWidth": 0,
+        "borderRadius": "4px",
+        "appearance": "none"
+      },
+      "examples": [
+        "<Button>Confirm</Button>",
+        "<Button>Save</Button>",
+        "<Button>Hello</Button>"
+      ],
+      "system": []
+    },
+    {
+      "name": "ButtonOutline",
+      "type": "button",
+      "props": {
+        "fontSize": 1,
+        "px": 4,
+        "py": 2,
+        "color": "blue",
+        "bg": "transparent",
+        "borderWidth": 2,
+        "borderColor": "currentColor"
+      },
+      "style": {
+        "display": "inline-block",
+        "fontFamily": "inherit",
+        "borderRadius": "4px",
+        "appearance": "none",
+        "boxSizing": "border-box"
+      },
+      "examples": [
+        "<ButtonOutline>Hello</ButtonOutline>"
+      ],
+      "system": [
+        "borderWidth",
+        "borderColor"
+      ]
+    },
+    {
+      "name": "Link",
+      "type": "a",
+      "props": {
+        "color": "inherit",
+        "hover": {
+          "opacity": 0.66,
+          "transition": "opacity .25s ease-in"
+        }
+      },
+      "style": {
+        "textAlign": "${props.center? 'center': 'left'}",
+        "textDecoration": "${props.underline? 'underline': 'none'}",
+        "opacity": 1,
+        "transition": "opacity .3s ease-in",
+        "display": "inline-block"
+      },
+      "examples": [
+        "<Link href=\"https://compositor.io\"mr={2}>Read our docs</Link>",
+        "<Link underline href=\"https://compositor.io/lab/docs\">Read our docs</Link>"
+      ],
+      "system": [
+        "hover"
+      ]
+    },
+    {
+      "name": "LinkBox",
+      "type": "a",
+      "props": {
+        "color": "black",
+        "fontSize": 2,
+        "borderWidth": 1,
+        "borderColor": "black",
+        "px": 2,
+        "py": 1
+      },
+      "style": {
+        "textDecoration": "none"
+      },
+      "examples": [
+        "<LinkBox href='#1'>1</LinkBox>"
+      ],
+      "system": [
+        "borderWidth",
+        "borderColor"
+      ]
+    },
+    {
+      "name": "Img",
+      "type": "img",
+      "props": {},
+      "style": {
+        "display": "block",
+        "maxWidth": "100%",
+        "width": "100%"
+      },
+      "examples": [
+        "<Img src='https://mrmrs.github.io/photos/u/001.jpg' mb={2} />",
+        "<Img src='https://mrmrs.github.io/photos/u/002.jpg' mb={2} />",
+        "<Img src='https://mrmrs.github.io/photos/u/007.jpg' mb={2} />",
+        "<Img src='https://mrmrs.github.io/photos/u/004.jpg' mb={2} />"
+      ],
+      "system": []
+    },
+    {
+      "name": "Hr",
+      "type": "hr",
+      "props": {
+        "bg": "transparent",
+        "color": "black",
+        "pl": 0,
+        "pr": 0,
+        "pb": 0,
+        "borderRadius": 0,
+        "borderWidth": 1,
+        "borderTop": true
+      },
+      "style": {
+        "height": 0
+      },
+      "examples": [
+        "<Hr />"
+      ],
+      "system": [
+        "borderRadius",
+        "borderWidth"
+      ]
+    },
+    {
+      "name": "Text",
+      "type": "div",
+      "props": {},
+      "style": {},
+      "examples": [
+        "<Text>Hello</Text>"
+      ]
+    },
+    {
+      "name": "Heading",
+      "type": "h2",
+      "props": {
+        "fontSize": 4,
+        "m": 0,
+        "fontWeight": "600"
+      },
+      "style": {},
+      "examples": [
+        "<Heading>Hello</Heading>"
+      ],
+      "system": [
+        "fontWeight",
+        "borderColor",
+        "borderWidth"
+      ]
+    },
+    {
+      "name": "P",
+      "type": "p",
+      "props": {},
+      "style": {
+        "maxWidth": "${props.wide? '34em': '28em'}",
+        "lineHeight": "1.5"
+      },
+      "examples": [
+        "<P>\rIMMACULATE typography is certainly the most brittle of all the arts. To create a whole from many petrified, dis- connected and given parts, to make this whole appear alive and of a piece — only sculpture in stone approaches the unyielding stiffness of perfect typography. For most people, even impeccable typography does not hold any particular aesthetic appeal. In its inaccessibility, it resembles great\rmusic. Under the best of circumstances, it is gratefully , accepted. To remain nameless and without specific appre- ciation, yet to have been of service to a valuable work and to the small number of visually sensitive readers — this, as a rule, is the only compensation for the long, and indeed never- ending, indenture of the typographer.</P>",
+        "<P>\rA very short example of a paragraph.</P>"
+      ],
+      "system": []
+    },
+    {
+      "name": "H1",
+      "type": "h1",
+      "props": {
+        "fontWeight": "600"
+      },
+      "style": {
+        "textAlign": "${props.center? 'center': 'left'}"
+      },
+      "examples": [
+        "<H1>Heading Number 1</H1>",
+        "<H1 center>Heading Number 1</H1>"
+      ],
+      "system": [
+        "fontWeight"
+      ]
+    },
+    {
+      "name": "H2",
+      "type": "h2",
+      "props": {
+        "fontWeight": "600"
+      },
+      "style": {
+        "textAlign": "${props.center? 'center': 'left'}"
+      },
+      "examples": [
+        "<H2>Heading Number 2</H2>",
+        "<H2 center>Centered Heading Number 2</H2>"
+      ],
+      "system": [
+        "fontWeight"
+      ]
+    },
+    {
+      "name": "H3",
+      "type": "h3",
+      "props": {
+        "fontWeight": "600"
+      },
+      "style": {
+        "textAlign": "${props.center? 'center': 'left'}"
+      },
+      "examples": [
+        "<H3>Heading Number 3</H3>"
+      ],
+      "system": [
+        "fontWeight"
+      ]
+    },
+    {
+      "name": "H4",
+      "type": "h4",
+      "props": {
+        "fontWeight": "600"
+      },
+      "style": {
+        "textAlign": "${props.center? 'center': 'left'}"
+      },
+      "examples": [
+        "<H4>Heading Number 4</H4>"
+      ],
+      "system": [
+        "fontWeight"
+      ]
+    },
+    {
+      "name": "Div",
+      "type": "div",
+      "props": {},
+      "style": {},
+      "examples": [
+        "<Div>A generic div component that now has the super powers of styled-system.</Div>",
+        "<Div bg='black' color='white' p={5}>A generic div component that now has the super powers of styled-system.</Div>",
+        "<Div bg='gray1' color='gray6' p={6} fontSize={4}>A generic div component that now has the super powers of styled-system.</Div>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Container",
+      "type": "div",
+      "props": {
+        "mx": "auto"
+      },
+      "style": {
+        "maxWidth": "64em",
+        "boxSizing": "border-box"
+      },
+      "examples": [
+        "<Container>A container for centering your page content. </Container>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Input",
+      "type": "input",
+      "props": {
+        "m": 0,
+        "w": 1,
+        "px": 2,
+        "py": 2,
+        "color": "inherit",
+        "bg": "transparent",
+        "borderColor": "gray4",
+        "borderWidth": 1,
+        "fontSize": null,
+        "focus": {
+          "outline": 0
+        },
+        "borderRadius": 2
+      },
+      "style": {
+        "display": "block",
+        "fontFamily": "inherit",
+        "fontSize": "inherit"
+      },
+      "examples": [
+        "<Input />"
+      ],
+      "system": [
+        "borderColor",
+        "borderWidth",
+        "focus",
+        "borderRadius"
+      ]
+    },
+    {
+      "name": "Label",
+      "type": "label",
+      "props": {
+        "fontSize": 1,
+        "fontWeight": "600"
+      },
+      "style": {
+        "display": "block"
+      },
+      "examples": [
+        "<Label>Hello</Label>"
+      ],
+      "system": [
+        "fontWeight"
+      ]
+    },
+    {
+      "name": "TextInput",
+      "imports": [
+        "Label",
+        "Div",
+        "Input",
+        "P"
+      ],
+      "jsx": "<Div {...props}>\n  <Label mb={1} children={props.label} />\n  {props.text &&\n    <P mt={0} mb={2} fontSize={0} color='gray5' wide>\n      {props.text}\n    </P>\n  }\n  <Input \n    type='text' \n    value={props.value} />\n</Div>",
+      "examples": [
+        "<TextInput mb={3} label=\"First Name\" />",
+        "<TextInput mb={3} label=\"Last Name\" />",
+        "<TextInput mb={3} label=\"Address\" text=\"Must be a valid shipping address\"/>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Ul",
+      "type": "ul",
+      "props": {
+        "m": 0,
+        "p": 0,
+        "borderColor": "transparent",
+        "borderWidth": 1
+      },
+      "style": {
+        "listStyleType": "none"
+      },
+      "examples": [
+        "<Ul>\n  <li>hi</li>\n  <li>there</li>\n</Ul>"
+      ],
+      "system": [
+        "borderColor",
+        "borderWidth"
+      ]
+    },
+    {
+      "name": "Li",
+      "type": "li",
+      "props": {
+        "borderWidth": 1,
+        "borderColor": "transparent"
+      },
+      "style": {},
+      "examples": [
+        "<Li>Hello</Li>"
+      ],
+      "system": [
+        "borderWidth",
+        "borderColor"
+      ]
+    }
+  ]
+}

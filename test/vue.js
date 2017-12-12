@@ -1,5 +1,8 @@
+import fs from 'fs'
 import test from 'ava'
 import { vue } from '../lib/templates'
+import createModules from '../lib'
+import fixture from './fixture.json'
 
 const config = {
   name: 'Hello',
@@ -28,5 +31,14 @@ test('vue returns a code string for extended components', t => {
   const result = vue(extConfig)
 
   t.is(typeof result, 'string')
+  t.snapshot(result)
+})
+
+test('vue handles an entire complex library', t => {
+  const result = createModules(fixture, {
+    library: 'vue',
+    harmony: true
+  })
+
   t.snapshot(result)
 })

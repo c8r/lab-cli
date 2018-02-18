@@ -96,6 +96,36 @@ but templates were used in an attempt to make it easier to contribute to this pr
 
 See [`docs/lab-json.md`](docs/lab-json.md)
 
+## webpack-loader
+
+The lab-loader imports a `lab.json` file and converts it into [styled-components][sc] for use in webpack.
+
+```js
+// example webpack.config.js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /lab\.json$/,
+        loader: '@compositor/lab/loader'
+      }
+    ]
+  }
+}
+```
+
+```js
+// example usage
+import { Heading, Button } from './lab.json'
+
+const example = (
+  <div>
+    <Heading>Hello</Heading>
+    <Button>Beep</Button>
+  </div>
+)
+```
+
 ## Roadmap
 
 - Vue.js export (currently in alpha)
